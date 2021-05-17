@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="whiteDiv">
+        <div style="border-bottom: dotted 2px rgb(175, 175, 175);"></div>
+            <div class="row">
+                <div class="col-xs-12">
+                <app-product-item *ngFor="let product of products, let i = index" [produkt]="product"></app-product-item>
+            </div>
+        </div>
+    </div>
+</div>

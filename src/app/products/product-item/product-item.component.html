@@ -1,0 +1,19 @@
+<div class="cart-item"> 
+    <div class="row">
+        <div class="col-xs-4">
+            <img style="max-height: auto; max-width: 80%; vertical-align: middle;" src = "{{ produkt.imazhi }}">
+        </div>
+        <div class="col-xs-4">
+            <h5 style="font-weight: bold">{{ produkt.emri }} </h5>
+            <p>{{ produkt.pershkrimi }}</p>
+        </div>
+        <div class="col-xs-4">  
+            <div class="book">
+                <p style="font-family: TAHOMA; font-weight: bold;">Price per Package: </p>
+                <p style="font-family: Comfortaa;">$ {{ produkt.cmimi }}</p>
+                <button mat-raised-button class="animation" (click) = "addToCart()"><span class="glyphicon glyphicon-shopping-cart"></span>Add To Shopping-Cart!</button>
+            </div>
+        </div>
+    </div>
+    <br>
+</div>
