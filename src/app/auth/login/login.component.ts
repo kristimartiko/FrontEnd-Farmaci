@@ -23,8 +23,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.logInForm.value).subscribe(response => {
       let token = JSON.parse(JSON.stringify(response));
       console.log(response);
-      localStorage.setItem('token', token.jwt);
-      localStorage.setItem('name', token.firstName);
+      localStorage.setItem('token', token);
     });
   }
 }
