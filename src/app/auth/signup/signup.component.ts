@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { error } from 'selenium-webdriver';
 import { AuthService } from '../auth.service';
 import { User } from '../user.module';
 
@@ -12,6 +13,7 @@ import { User } from '../user.module';
 export class SignupComponent implements OnInit {
 
   signUpForm: FormGroup;
+  error1: string;
 
   constructor(private authService: AuthService,
     private router: Router) { }
@@ -27,10 +29,13 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
     if(this.signUpForm.valid) {
-      this.authService.signup(this.signUpForm.value).subscribe((responseData: User) => {
+      this.authService.signup(this.signUpForm.value).subscribe((responseData : User) => {
         console.log(responseData);
         this.signUpForm.reset();
-      })
+      }, error => {
+        this.error1 = "Email already exists!"
+      }
+      );
     }
   }
 

@@ -10,6 +10,7 @@ import { AuthService } from '../auth.service';
 export class LoginComponent implements OnInit {
 
   logInForm: FormGroup;
+  error1: string;
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
@@ -24,6 +25,9 @@ export class LoginComponent implements OnInit {
       let token = JSON.parse(JSON.stringify(response));
       console.log(response);
       localStorage.setItem('token', token);
+      this.logInForm.reset();
+    }, error => {
+      this.error1 = "Invalid Email/Password!"
     });
   }
 }

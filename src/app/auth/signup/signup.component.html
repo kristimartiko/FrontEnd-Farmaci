@@ -27,7 +27,10 @@
                 <label class="checkbox-inline"><input type="checkbox" required> I accept the <a>Terms of Use</a> &amp;
                     <a>Privacy Policy</a></label>
             </div>
-            <button type="submit" class="btn btn-primary btn btn-block">Sign Up</button>
+            <div class="alert alert-danger" *ngIf="error1 != null">
+                <span >{{ error1 }}</span>
+            </div>
+            <button type="submit" class="btn btn-primary btn btn-block" [disabled]="!signUpForm.valid">Sign Up</button>
         </form>
         <br>
         <div class="text-center">Already have an account? <a style="cursor: pointer;" routerLink="/login">Sign in</a></div>

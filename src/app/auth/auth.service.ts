@@ -8,10 +8,6 @@ import { User } from './user.module';
 })
 export class AuthService {
 
-  private role: string = '';
-  private isAdmin;
-  private actualUserId: number;
-
   constructor(private http: HttpClient) { }
 
   recieveUser(): Observable<User[]> {

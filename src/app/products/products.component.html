@@ -1,9 +1,30 @@
 <div class="container">
     <div class="whiteDiv">
         <div style="border-bottom: dotted 2px rgb(175, 175, 175);"></div>
-            <div class="row">
-                <div class="col-xs-12">
-                <app-product-item *ngFor="let product of products, let i = index" [produkt]="product"></app-product-item>
+            <div *ngFor="let product of products, let i = index">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <br><br><br>
+                        <div class="cart-item"> 
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <img style="max-height: auto; max-width: 80%; vertical-align: middle;" src = "{{ product.imazhi }}">
+                                </div>
+                                <div class="col-xs-4">
+                                    <h5 style="font-weight: bold">{{ product.emri }} </h5>
+                                    <p>{{ product.pershkrimi }}</p>
+                                </div>
+                                <div class="col-xs-4">  
+                                    <div class="book">
+                                        <p style="font-family: TAHOMA; font-weight: bold;">Cmimi i Produktit: </p>
+                                        <p style="font-family: Comfortaa;">$ {{ product.cmimi }}</p>
+                                        <button class="animation" (click) = "addToCart()"><span class="glyphicon glyphicon-shopping-cart"></span>Shto Ne Shporte!</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                </div>
             </div>
         </div>
     </div>
