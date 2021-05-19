@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="whiteDiv">
+      <div>
+        <div style="border-bottom: dotted 2px rgb(175, 175, 175);">
+          <h1 class="top-text"><span style="color: rgb(21, 149, 231) ;">Y</span>our Cart</h1>
+        </div>
+      </div>
+      <div class="table-style">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col"><b>#</b></th>
+              <th scope="col">Medicine Name</th>
+              <th scope="col">Medicine Value</th>
+              <th scope="col">Quantity</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cart of products, let i = index">
+              <td><b>{{ i + 1 }}</b></td>
+              <td>{{ cart.emri }}</td>
+              <td>{{ cart.cmimi }}</td>
+              <td><a style="cursor: pointer;" (click) = "decrementQuantity(i)"><span class="glyphicon glyphicon-minus"></span></a>
+              {{ cart.sasi }}
+                <a style="cursor: pointer;"  (click) = "incrementQuantity(i)"><span class="glyphicon glyphicon-plus"></span></a>
+              </td>
+              <td><a style="cursor: pointer;" (click)="deleteItem(i)"><span class="glyphicon glyphicon-trash red"></span></a></td>
+            </tr>
+          </tbody>
+        </table>
+        <div *ngIf="isEmpty()" class="alert alert-info text-center" style="margin: 20px;">
+          <strong>Info!</strong> Your cart is empty!
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-5">
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
