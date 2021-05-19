@@ -1,5 +1,5 @@
 export class Product {
-    public id: number;
+    public product_id: number;
     public emri: string;
     public cmimi: string;
     public imazhi: string;

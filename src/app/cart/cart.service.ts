@@ -14,7 +14,7 @@ export class CartService {
   }
   
   shtoNeShporte(id: number) {
-    return this.http.post(`http://127.0.0.1:8000/api/addToCart{id}`, id).subscribe((postData: any) => {
+    return this.http.post(`http://127.0.0.1:8000/api/addToCart/${id}`, id).subscribe((postData: any) => {
       console.log(postData);
     });
   }
