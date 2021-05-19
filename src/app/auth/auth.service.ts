@@ -24,9 +24,17 @@ export class AuthService {
 
   logout() {
     return this.http.get("http://127.0.0.1:8000/api/logout");
+    localStorage.removeItem('token');
   }
 
   getToken() {
     return localStorage.getItem('token');
+  }
+
+  isLoggedIn() {
+    if(localStorage.getItem('token') !== null) {
+      //let token = localStorage.getItem('token');
+      return true;
+    } else return false;
   }
 }
