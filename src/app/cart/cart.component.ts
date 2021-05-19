@@ -19,4 +19,32 @@ export class CartComponent implements OnInit {
     })
   }
 
+  deleteItem(index: number) {
+    this.cartService.fshijNgaShporta(this.products[index].id).subscribe(() => {
+      this.products.splice(index, 1);
+    });
+  }
+
+  incrementQuantity(index: number) {
+    this.cartService.shtoSasi(this.products[index].id).subscribe(() => {
+      this.products[index].sasi = this.products[index].sasi + 1;
+    });
+  }
+
+  decrementQuantity(index: number) {
+    if(this.products[index].sasi <= 1) {
+      this.cartService.fshijNgaShporta(this.products[index].id).subscribe(() => {
+        this.products.splice(index, 1);
+      });
+    } 
+    this.cartService.zbritSasi(this.products[index].id).subscribe(() => {
+      this.products[index].sasi = this.products[index].sasi - 1;
+    });
+  }
+
+  isEmpty() {
+    if(this.products.length == 0) {
+      return true;
+    } else return false;
+  }
 }

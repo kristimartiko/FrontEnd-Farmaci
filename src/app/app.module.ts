@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ProductsComponent } from './products/products.component';
 import { CartComponent } from './cart/cart.component';
 import { TokenInterceptorService } from './token-interceptor.service';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TokenInterceptorService } from './token-interceptor.service';
     SignupComponent,
     NavbarComponent,
     ProductsComponent,
-    CartComponent
+    CartComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
