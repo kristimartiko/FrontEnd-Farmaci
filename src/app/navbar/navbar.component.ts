@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
 
   getLogInState(): boolean {
     this.isLoggedIn = this.authService.isLoggedIn();
-    if(this.isLoggedIn == true) {
+    if(this.isLoggedIn === true) {
       return true;
     } else return false;
   }
