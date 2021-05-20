@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="whiteDiv">
+      <div>
+        <div style="border-bottom: dotted 2px rgb(175, 175, 175);">
+          <h1 class="top-text"><span style="color: rgb(21, 149, 231) ;">Blerjet</span></h1>
+        </div>
+      </div>
+      <div class="table-style">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col"><b>#</b></th>
+              <th scope="col">Emri I Ilacit</th>
+              <th scope="col">Data E Blerjes</th>
+              <th scope="col">Sasia</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let hist of historik, let i = index">
+              <td><b>{{ i + 1 }}</b></td>
+              <td>{{ hist.emri }}</td>
+              <td>{{ hist.data}}</td>
+              <td>{{ hist.sasi }}</td>
+            </tr>
+          </tbody>
+        </table>
+         <div *ngIf="isEmpty()" class="alert alert-info text-center" style="margin: 20px;">
+          <strong>Info!</strong> Nuk Keni Kryer Asnje Blerje!
+        </div>
+      </div>
+    </div>
+</div>
+
