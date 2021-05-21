@@ -14,6 +14,9 @@ import { CartComponent } from './cart/cart.component';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { HomeComponent } from './home/home.component';
 import { PurchasesComponent } from './purchases/purchases.component';
+import { AdminComponent } from './admin/admin.component';
+import { UsermanagmentComponent } from './admin/usermanagment/usermanagment.component';
+import { ProductmanagmentComponent } from './admin/productmanagment/productmanagment.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { PurchasesComponent } from './purchases/purchases.component';
     ProductsComponent,
     CartComponent,
     HomeComponent,
-    PurchasesComponent
+    PurchasesComponent,
+    AdminComponent,
+    UsermanagmentComponent,
+    ProductmanagmentComponent
   ],
   imports: [
     BrowserModule,

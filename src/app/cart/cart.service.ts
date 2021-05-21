@@ -30,4 +30,8 @@ export class CartService {
   zbritSasi(id: number) {
     return this.http.get(`http://127.0.0.1:8000/api/hiqSasi/${id}`);
   }
+
+  makePurchase() {
+    return this.http.get('http://127.0.0.1:8000/api/purchase');
+  }
 }

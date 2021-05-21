@@ -2,7 +2,7 @@
     <div class="whiteDiv">
       <div>
         <div style="border-bottom: dotted 2px rgb(175, 175, 175);">
-          <h1 class="top-text"><span style="color: rgb(21, 149, 231) ;">Y</span>our Cart</h1>
+          <h1 class="top-text"><span style="color: rgb(21, 149, 231) ;">Karta</span> Juaj</h1>
         </div>
       </div>
       <div class="table-style">
@@ -10,9 +10,9 @@
           <thead>
             <tr>
               <th scope="col"><b>#</b></th>
-              <th scope="col">Medicine Name</th>
-              <th scope="col">Medicine Value</th>
-              <th scope="col">Quantity</th>
+              <th scope="col">Emri I Ilacit</th>
+              <th scope="col">Cmimi I Ilacit</th>
+              <th scope="col">Sasia</th>
               <th scope="col"></th>
             </tr>
           </thead>
@@ -20,7 +20,7 @@
             <tr *ngFor="let cart of products, let i = index">
               <td><b>{{ i + 1 }}</b></td>
               <td>{{ cart.emri }}</td>
-              <td>{{ cart.cmimi }}</td>
+              <td>$ {{ cart.cmimi }}</td>
               <td><a style="cursor: pointer;" (click) = "decrementQuantity(i)"><span class="glyphicon glyphicon-minus"></span></a>
               {{ cart.sasi }}
                 <a style="cursor: pointer;"  (click) = "incrementQuantity(i)"><span class="glyphicon glyphicon-plus"></span></a>
@@ -34,7 +34,12 @@
         </div> 
         <hr>
         <div class="row">
-          <div class="col-xs-5">
+          <div class="col-xs-2">
+            <button class="btn btn-success btn-md btn-block" *ngIf="!isEmpty()" (click)="purchase()">Blej!</button>
+          </div>
+          <div class="col-xs-8"></div>
+          <div class="col-xs-2">
+            <strong>Total:</strong> $ {{ this.total }}
           </div>
         </div>
       </div>

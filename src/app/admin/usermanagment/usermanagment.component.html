@@ -1,0 +1,33 @@
+<div class="container" style="border: 1px solid white; background-color: white; margin-top: 130px;">
+    <div style="border-bottom: dotted 2px grey;">
+         <h1 class="top-text"><span style="color: rgb(21, 149, 231) ;">Perdoruesit</span></h1>
+    </div>
+    <div class="table-style">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Emri</th>
+                    <th scope="col">Mbiemri</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Role</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users let i = index">
+                    <td style="font-weight: bold;">{{ i + 1 }}</td>
+                    <td>{{ user.emri }}</td>
+                    <td>{{ user.mbiemri }}</td>
+                    <td>{{ user.emaili }}</td>
+                    <td></td>
+                   <!-- <td>{{ user.roles[0].name }}</td> -->
+                   <!-- <td><a (click)="updateUser(user)" style="cursor: pointer;"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a (click)="deleteUser(i)" style="cursor: pointer;"><span class="glyphicon glyphicon-trash red"></span></a></td>-->
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+    </div>
+</div> 
