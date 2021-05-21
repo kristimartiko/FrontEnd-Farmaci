@@ -9,7 +9,6 @@ import { ProductService } from './product.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-
   products: Product[] = [];
   constructor(private productService: ProductService,
     private cartService: CartService) { }
@@ -24,5 +23,5 @@ export class ProductsComponent implements OnInit {
   addToCart(index: number) {
     this.cartService.shtoNeShporte(this.products[index].product_id);
   }
-
+ 
 }
