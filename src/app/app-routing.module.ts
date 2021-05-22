@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminGuard } from './admin/admin-guard.service';
+import { AdminComponent } from './admin/admin.component';
 import { UsermanagmentComponent } from './admin/usermanagment/usermanagment.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
@@ -15,7 +17,9 @@ const routes: Routes = [
     {path: 'cart', component: CartComponent},
     {path: 'home', component: HomeComponent},
     {path: 'purchases', component: PurchasesComponent},
-    {path: 'usermanagment', component: UsermanagmentComponent}
+    { path: 'admin', canActivate: [AdminGuard], children:[
+      {path:'users', component: UsermanagmentComponent}      
+  ] }
 ];
 
 @NgModule({

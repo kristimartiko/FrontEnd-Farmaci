@@ -15,6 +15,7 @@ export class UsermanagmentComponent implements OnInit {
   ngOnInit(): void {
     this.authService.recieveUser().subscribe((user: User[]) => {
       this.users = user;
+      console.log(user);
     })
   }
 

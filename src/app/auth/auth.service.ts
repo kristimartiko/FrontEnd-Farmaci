@@ -7,6 +7,7 @@ import { User } from './user.module';
   providedIn: 'root'
 })
 export class AuthService {
+  private state: String;
 
   constructor(private http: HttpClient) { }
 
@@ -37,4 +38,19 @@ export class AuthService {
       return true;
     } else return false;
   }
+
+  isAdmin() {
+    return this.http.get('http://127.0.0.1:8000/api/isAdmin').subscribe((state) => {
+      let userState = JSON.parse(JSON.stringify(state));
+      localStorage.setItem('role', userState);
+    });
+  }
+
+  getRole() {
+    if(localStorage.getItem('role') == "Admin") {
+      return true;
+    } else return false;
+  }
+
+
 }

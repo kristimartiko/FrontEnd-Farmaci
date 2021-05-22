@@ -25,5 +25,11 @@ export class NavbarComponent implements OnInit {
     this.authService.logout();
   }
 
+  isAdmin() {
+    if(this.authService.getRole()) {
+      return true;
+    } else return false;
+  }
+
 
 }

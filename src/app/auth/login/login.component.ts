@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
       let token = JSON.parse(JSON.stringify(response));
       console.log(response);
       localStorage.setItem('token', token);
+      this.authService.isAdmin();
       this.logInForm.reset();
     }, error => {
       this.error1 = "Invalid Email/Password!"
