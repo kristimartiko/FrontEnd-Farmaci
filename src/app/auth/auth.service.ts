@@ -26,6 +26,7 @@ export class AuthService {
   logout() {
     //return this.http.get("http://127.0.0.1:8000/api/logout");
     localStorage.removeItem('token');
+    localStorage.removeItem('role');
   }
 
   getToken() {
@@ -52,5 +53,12 @@ export class AuthService {
     } else return false;
   }
 
+  updateUser(user: User, user_id: number) {
+    return this.http.put(`http://127.0.0.1:8000/api/update/${user_id}`, user);
+  }
+
+  deleteUser(user: any) {
+    return this.http.delete(`http://127.0.0.1:8000/api/delete/${user.user_id}`);
+  }
 
 }

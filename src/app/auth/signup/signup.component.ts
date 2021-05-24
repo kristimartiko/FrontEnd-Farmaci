@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { error } from 'selenium-webdriver';
 import { AuthService } from '../auth.service';
 import { User } from '../user.module';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-signup',
@@ -16,7 +17,8 @@ export class SignupComponent implements OnInit {
   error1: string;
 
   constructor(private authService: AuthService,
-    private router: Router) { }
+    private router: Router,
+    private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.signUpForm = new FormGroup({
@@ -32,6 +34,9 @@ export class SignupComponent implements OnInit {
       this.authService.signup(this.signUpForm.value).subscribe((responseData : User) => {
         console.log(responseData);
         this.signUpForm.reset();
+        this.snackBar.open('Successfully signed up!', '', {
+          duration: 3000
+        })
       }, error => {
         this.error1 = "Email already exists!"
       }

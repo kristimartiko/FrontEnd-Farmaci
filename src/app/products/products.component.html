@@ -1,33 +1,46 @@
-<div class="container">
-    <div class="whiteDiv">
-        <div style="border-bottom: dotted 2px rgb(175, 175, 175);">
-            <h1 class="top-text"><span style="color: rgb(21, 149, 231) ;">Produkte</span></h1>
-        </div>
-            <div *ngFor="let product of products, let i = index">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <br><br><br>
-                        <div class="cart-item"> 
-                            <div class="row">
-                                <div class="col-xs-4">
-                                    <img style="max-height: auto; max-width: 80%; vertical-align: middle;" src = "{{ product.imazhi }}">
-                                </div>
-                                <div class="col-xs-4">
-                                    <h5 style="font-weight: bold">{{ product.emri }} </h5>
-                                    <p>{{ product.pershkrimi }}</p>
-                                </div>
-                                <div class="col-xs-4">  
-                                    <div class="book">
-                                        <p style="font-family: TAHOMA; font-weight: bold;">Cmimi i Produktit: </p>
-                                        <p style="font-family: Comfortaa;">$ {{ product.cmimi }}</p>
-                                        <button class="animation" (click) = "addToCart(i)"><span class="glyphicon glyphicon-shopping-cart"></span>Shto Ne Shporte!</button>
+<div class="homeImage">
+    <div class="text-center">
+      <div>
+        <img
+          class="body-image"
+          src="/assets/photo-1584362917165-526a968579e8.jpeg"
+          style="width: 100%;   filter: blur(5px); -webkit-filter: blur(5px);"
+        />
+      </div>
+      <div class="centered">
+        <div class="container">
+            <div class="whiteDiv">
+                <div style="border-bottom: dotted 2px rgb(175, 175, 175); text-align: left;">
+                    <h1 class="top-text;"><span style="color: rgb(21, 149, 231) ;">Produkte</span></h1>
+                </div>
+                    <div *ngFor="let product of products, let i = index">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <br><br><br>
+                                <div class="cart-item"> 
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            <img style="max-height: auto; max-width: 80%; vertical-align: middle;" src = "{{ product.imazhi }}">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <h4 style="font-weight: bold; text-align: left;">{{ product.emri }} </h4>
+                                            <h5 style=" text-align: left;">{{ product.pershkrimi }}</h5>
+                                        </div>
+                                        <div class="col-xs-4">  
+                                            <div class="book">
+                                                <p style="font-family: TAHOMA; font-weight: bold;">Cmimi i Produktit: </p>
+                                                <p style="font-family: Comfortaa;">$ {{ product.cmimi }}</p>
+                                                <button class="btn btn-success btn-sm" (click) = "addToCart(i)"><span class="glyphicon glyphicon-shopping-cart"></span>Shto Ne Shporte!</button>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <br>
                                 </div>
-                            </div>
-                            <br>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>

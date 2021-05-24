@@ -17,6 +17,11 @@ import { PurchasesComponent } from './purchases/purchases.component';
 import { AdminComponent } from './admin/admin.component';
 import { UsermanagmentComponent } from './admin/usermanagment/usermanagment.component';
 import { ProductmanagmentComponent } from './admin/productmanagment/productmanagment.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { EditUserComponent } from './admin/usermanagment/edit-user/edit-user.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -31,14 +36,19 @@ import { ProductmanagmentComponent } from './admin/productmanagment/productmanag
     PurchasesComponent,
     AdminComponent,
     UsermanagmentComponent,
-    ProductmanagmentComponent
+    ProductmanagmentComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [ {provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,

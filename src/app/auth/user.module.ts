@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 export class User { 
-  public id: number;
+  public user_id: number;
   public emri: string;
   public mbiemri: string;
   public email: string;

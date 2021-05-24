@@ -1,0 +1,29 @@
+<button (click)="onClose()" class="btn btn-primary btn-sm pull-right">X</button>
+<h2 mat-dialog-title style="text-align: center;">Edit User!</h2>
+<mat-dialog-content class="create-form">
+    <form [formGroup]="userForm">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Emri" fromControlName="emri">
+            <span *ngIf="!userForm.get('emri').valid && userForm.get('emri').touched"
+            class="help-block red">Please enter a valid name!</span>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Mbiemri" formControlName="mbiemri">
+            <span *ngIf="!userForm.get('mbiemri').valid && userForm.get('mbiemri').touched"
+            class="help-block red">Please enter a vlid lastname!</span>
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" placeholder="Email" formControlName="emaili">
+            <span *ngIf="!userForm.get('emaili').value && userForm.get('emaili').touched"
+            class="help-block red">Please enter a valid email!</span>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" placeholder="Password" formControlName="password">
+            <span *ngIf="!userForm.get('password').valid && userForm.get('password').touched"
+            class="help-block red">Please enter a valid password!</span>
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button type="button" (click)="onSubmit()" class="animation">Edit User</button>
+</mat-dialog-actions> 

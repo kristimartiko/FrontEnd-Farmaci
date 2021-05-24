@@ -10,7 +10,6 @@
                     <th scope="col">Emri</th>
                     <th scope="col">Mbiemri</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Role</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
                 </tr>
@@ -21,10 +20,8 @@
                     <td>{{ user.emri }}</td>
                     <td>{{ user.mbiemri }}</td>
                     <td>{{ user.emaili }}</td>
-                    <td></td>
-                   <!-- <td>{{ user.roles[0].name }}</td> -->
-                   <!-- <td><a (click)="updateUser(user)" style="cursor: pointer;"><span class="glyphicon glyphicon-edit"></span></a></td>
-                    <td><a (click)="deleteUser(i)" style="cursor: pointer;"><span class="glyphicon glyphicon-trash red"></span></a></td>-->
+                    <td><a (click)="updateUser(user)" style="cursor: pointer;"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a (click)="deleteUser(i)" style="cursor: pointer;"><span class="glyphicon glyphicon-trash red"></span></a></td>
                 </tr>
             </tbody>
         </table>

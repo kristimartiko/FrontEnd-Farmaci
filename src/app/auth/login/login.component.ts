@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,7 +12,9 @@ export class LoginComponent implements OnInit {
 
   logInForm: FormGroup;
   error1: string;
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService,
+    private router: Router,
+    private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.logInForm = new FormGroup({
@@ -27,6 +30,19 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('token', token);
       this.authService.isAdmin();
       this.logInForm.reset();
+      let role = localStorage.getItem('role');
+      console.log(role);
+      if(role == "Admin") {
+        this.router.navigate(['/home']);
+        this.snackBar.open('Successfully logged in as Admin!', '', {
+          duration: 3000
+        });
+      } else {
+        this.router.navigate(['/home']);
+        this.snackBar.open('Successfully logged in as User!', '', {
+          duration: 3000
+        });
+      }
     }, error => {
       this.error1 = "Invalid Email/Password!"
     });
