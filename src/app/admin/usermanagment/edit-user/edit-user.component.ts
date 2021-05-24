@@ -18,6 +18,7 @@ export class EditUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.userForm = new FormGroup({
+      'user_id': new FormControl(this.user.user_id),
       'emri': new FormControl(this.user.emri, Validators.required),
       'mbiemri': new FormControl(this.user.mbiemri, Validators.required),
       'emaili': new FormControl(this.user.emaili, Validators.required),
@@ -26,7 +27,7 @@ export class EditUserComponent implements OnInit {
   }
 
   onSubmit() {
-    this.authService.updateUser(this.userForm.value, this.user.user_id).subscribe(() => {
+    this.authService.updateUser(this.userForm.value).subscribe(() => {
       this.matDialogRef.close(true);
     });
   }

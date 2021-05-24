@@ -3,7 +3,7 @@
 <mat-dialog-content class="create-form">
     <form [formGroup]="userForm">
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Emri" fromControlName="emri">
+            <input type="text" class="form-control" placeholder="Emri" formControlName="emri">
             <span *ngIf="!userForm.get('emri').valid && userForm.get('emri').touched"
             class="help-block red">Please enter a valid name!</span>
         </div>

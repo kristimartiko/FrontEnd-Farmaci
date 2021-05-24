@@ -37,9 +37,10 @@ export class UsermanagmentComponent implements OnInit {
     }); 
   }
 
-  deleteUser(id: number) {
-    this.authService.deleteUser(this.users[id]).subscribe(() => {
-      this.users.splice(id, 1);
+  deleteUser(index: number) {
+    console.log(this.users[index].user_id);
+    this.authService.deleteUser(this.users[index]).subscribe(() => {
+      this.users.splice(index, 1);
     });
   }
 }

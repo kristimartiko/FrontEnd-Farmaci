@@ -53,12 +53,12 @@ export class AuthService {
     } else return false;
   }
 
-  updateUser(user: User, user_id: number) {
-    return this.http.put(`http://127.0.0.1:8000/api/update/${user_id}`, user);
+  updateUser(user: User) {
+    return this.http.put<User>(`http://127.0.0.1:8000/api/updateUsers/${user.user_id}`, user);
   }
 
-  deleteUser(user: any) {
-    return this.http.delete(`http://127.0.0.1:8000/api/delete/${user.user_id}`);
+  deleteUser(user: User) {
+    return this.http.delete(`http://127.0.0.1:8000/api/deleteUser/${user.user_id}`);
   }
 
 }
