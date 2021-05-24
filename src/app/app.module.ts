@@ -22,6 +22,7 @@ import { EditUserComponent } from './admin/usermanagment/edit-user/edit-user.com
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { EditProductComponent } from './admin/productmanagment/edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     AdminComponent,
     UsermanagmentComponent,
     ProductmanagmentComponent,
-    EditUserComponent
+    EditUserComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,

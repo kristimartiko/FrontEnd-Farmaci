@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Product } from 'src/app/products/product.module';
+import { ProductService } from 'src/app/products/product.service';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-productmanagment',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductmanagmentComponent implements OnInit {
 
-  constructor() { }
+  @Input() products: Product[] = [];
+  constructor(private productService: ProductService,
+    private dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.productService.recieveProducts().subscribe((products) => {
+      this.products = products;
+    }) 
   }
 
+ 
 }

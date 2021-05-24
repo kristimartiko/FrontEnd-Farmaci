@@ -30,19 +30,10 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('token', token);
       this.authService.isAdmin();
       this.logInForm.reset();
-      let role = localStorage.getItem('role');
-      console.log(role);
-      if(role == "Admin") {
         this.router.navigate(['/home']);
-        this.snackBar.open('Successfully logged in as Admin!', '', {
+        this.snackBar.open('Successfully logged in!', '', {
           duration: 3000
         });
-      } else {
-        this.router.navigate(['/home']);
-        this.snackBar.open('Successfully logged in as User!', '', {
-          duration: 3000
-        });
-      }
     }, error => {
       this.error1 = "Invalid Email/Password!"
     });

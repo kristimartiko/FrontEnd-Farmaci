@@ -1,1 +1,29 @@
-<p>productmanagment works!</p>
+<div class="container" style="border: 1px solid white; background-color: white; margin-top: 130px;">
+    <div style="border-bottom: dotted 2px rgb(175, 175, 175);">
+        <h1 class="top-text"><span style="color: rgb(21, 149, 231) ;">Menaxho</span> Produktet</h1>
+    </div>
+    <div class="table-style">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Emri Produktit</th>
+                    <th scope="col">Cmimi</th>
+                    <th scope="col">Imazhi</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products; let i = index">
+                    <td style="font-weight: bold;">{{ i + 1 }}</td>
+                    <td>{{ product.emri }}</td>
+                    <td>{{ product.cmimi }}</td>
+                    <td>{{ product.imazhi }}</td>
+                    <td><a style="cursor: pointer;" (click)="updateProduct(product)"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a style="cursor: pointer;" (click)="deleteProduct(i)"><span class="glyphicon glyphicon-trash"></span></a></td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+    </div>
+</div>
