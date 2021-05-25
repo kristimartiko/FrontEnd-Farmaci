@@ -30,7 +30,7 @@
                                             <div class="book">
                                                 <p style="font-family: TAHOMA; font-weight: bold;">Cmimi i Produktit: </p>
                                                 <p style="font-family: Comfortaa;">$ {{ product.cmimi }}</p>
-                                                <button class="btn btn-success btn-sm" (click) = "addToCart(i)"><span class="glyphicon glyphicon-shopping-cart"></span>Shto Ne Shporte!</button>
+                                                <button class="btn btn-success btn-sm" (click) = "addToCart(i)" [disabled]="!isLoggedIn()"><span class="glyphicon glyphicon-shopping-cart"></span>Shto Ne Shporte!</button>
                                             </div>
                                         </div>
                                     </div>

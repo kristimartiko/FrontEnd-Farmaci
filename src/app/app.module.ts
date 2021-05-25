@@ -23,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { EditProductComponent } from './admin/productmanagment/edit-product/edit-product.component';
+import { AddProductComponent } from './admin/productmanagment/add-product/add-product.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { EditProductComponent } from './admin/productmanagment/edit-product/edit
     UsermanagmentComponent,
     ProductmanagmentComponent,
     EditUserComponent,
-    EditProductComponent
+    EditProductComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,

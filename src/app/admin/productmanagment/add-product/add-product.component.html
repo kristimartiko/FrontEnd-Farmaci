@@ -1,0 +1,28 @@
+
+<button class="btn btn-primary btn-sm pull-right" (click)="onClose()">X</button>
+<h2 mat-dialog-title style="text-align: center;">Add Product!</h2>
+<mat-dialog-content class="create-form">
+    <form [formGroup]="productAddForm">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Enter Product Name" formControlName="emri">
+            <span *ngIf="!productAddForm.get('emri').valid && productAddForm.get('emri').touched" class="help-block red"></span>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Enter Price" formControlName="cmimi">
+            <span *ngIf="!productAddForm.get('cmimi').valid && productAddForm.get('cmimi').touched" class="help-block red"></span>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Vendos Pershkrimin" formControlName="pershkrimi">
+            <span *ngIf="!productAddForm.get('pershkrimi').valid && productAddForm.get('pershkrimi').touched" class="help-block red"></span>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Enter ImgPath" formControlName="imazhi"> 
+            <span *ngIf="!productAddForm.get('imazhi').valid && productAddForm.get('imazhi').touched" class="help-block red"></span>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Vendos Sasi" formControlName="sasi">
+            <span *ngIf="!productAddForm.get('sasi').valid && productAddForm.get('sasi').touched" class="help-block red"></span>
+        </div>
+    </form>
+</mat-dialog-content>
+<button mat-raised-button type="button" (click)="onSubmit()" class="btn btn-primary">Add Product!</button>

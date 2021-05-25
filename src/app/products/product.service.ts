@@ -22,7 +22,7 @@ export class ProductService {
   }
 
   updateProduct(p: Product) {
-    return this.http.put<Product>(`http://127.0.0.1:8000/api/delete/${p.product_id}`, p);
+    return this.http.put<Product>(`http://127.0.0.1:8000/api/update/${p.product_id}`, p);
   }
   
 }
