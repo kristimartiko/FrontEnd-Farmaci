@@ -14,7 +14,7 @@
                 <li class="smoothScroll" routerLinkActive="active"><a routerLink="/products">Produkte</a></li>
                 <li class="smoothScroll" routerLinkActive="active"><a routerLink="/cart">Shporta</a></li>
                 <li class="smoothScroll" routerLinkActive="active" *ngIf="!getLogInState()"><a routerLink="/login">Log in<span class="glyphicon glyphicon-user"></span></a></li>
-                <li *ngIf="getLogInState()"><a class="dropdown-toggle" data-toggle="dropdown" style="cursor: pointer;"><i class="glyphicon glyphicon-cog"></i></a>
+                <li *ngIf="getLogInState()"><a class="dropdown-toggle" data-toggle="dropdown" style="cursor: pointer;"><i class="glyphicon glyphicon-th-list"></i></a>
                     <ul class="dropdown-menu">   
                             <li><a (click)="navLogOut()" routerLink="/home">LogOut <span class="glyphicon glyphicon-log-out"></span></a></li>
                             <li><a routerLink="/purchases">Blerjet</a></li>
