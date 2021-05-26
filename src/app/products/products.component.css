@@ -1,10 +1,18 @@
 .centered {
     position: absolute;
-    top: 100%;
+  top: auto;
     left: 50%;
     transform: translate(-50%, -50%);
     color: black;
     
     display: inline;
     font-family: "Lucida Console", "Courier New", monospace;
+  }
+
+  body{
+    background: url("/assets/photo-1584362917165-526a968579e8.jpeg");
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: auto;
   }
