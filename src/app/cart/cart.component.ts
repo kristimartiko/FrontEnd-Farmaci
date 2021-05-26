@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from './cart.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { error } from 'selenium-webdriver';
 
 @Component({
   selector: 'app-cart',
@@ -10,7 +12,8 @@ export class CartComponent implements OnInit {
 
   products: any[] = [];
   total: number = 0;
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService,
+    private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.cartService.getCart().subscribe((response: any[]) => {
@@ -58,6 +61,10 @@ export class CartComponent implements OnInit {
   purchase() {
     this.cartService.makePurchase().subscribe(() => {
       window.location.reload();
+    }, error => {
+      this.snackBar.open('Produkti Nuk Ka Mjaftueshem Sasi', '', {
+      duration: 3000
+      })
     });
   }
 

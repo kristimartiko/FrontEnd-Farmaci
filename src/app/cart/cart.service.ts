@@ -2,13 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { error } from 'selenium-webdriver';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  constructor(private http :HttpClient) { }
+  constructor(private http :HttpClient,
+    private snackBar: MatSnackBar) { }
 
   getCart() {
     return this.http.get('http://127.0.0.1:8000/api/getShporte');
