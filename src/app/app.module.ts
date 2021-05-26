@@ -24,6 +24,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { EditProductComponent } from './admin/productmanagment/edit-product/edit-product.component';
 import { AddProductComponent } from './admin/productmanagment/add-product/add-product.component';
+import { FilterPipe } from './products/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { AddProductComponent } from './admin/productmanagment/add-product/add-pr
     ProductmanagmentComponent,
     EditUserComponent,
     EditProductComponent,
-    AddProductComponent
+    AddProductComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
