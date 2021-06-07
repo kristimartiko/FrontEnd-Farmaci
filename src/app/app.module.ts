@@ -25,6 +25,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { EditProductComponent } from './admin/productmanagment/edit-product/edit-product.component';
 import { AddProductComponent } from './admin/productmanagment/add-product/add-product.component';
 import { FilterPipe } from './products/filter.pipe';
+import { PDFExportModule } from '@progress/kendo-angular-pdf-export';
+
+
 
 @NgModule({
   declarations: [
@@ -54,7 +57,8 @@ import { FilterPipe } from './products/filter.pipe';
     NgbModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    PDFExportModule
   ],
   providers: [ {provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,

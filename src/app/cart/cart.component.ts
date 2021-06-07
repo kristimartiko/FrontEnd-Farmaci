@@ -3,15 +3,20 @@ import { CartService } from './cart.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { error } from 'selenium-webdriver';
 
+declare var require: any;
+const FileServer = require('file-saver');
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
+
 export class CartComponent implements OnInit {
 
   products: any[] = [];
   total: number = 0;
+
   constructor(private cartService: CartService,
     private snackBar: MatSnackBar) { }
 
@@ -21,6 +26,7 @@ export class CartComponent implements OnInit {
       console.log(this.products);
       for(let cartEl of this.products) {
         this.total = this.total + cartEl.sasi * cartEl.cmimi;
+        this.total = Math.trunc(this.total);
       }
     })
   }
@@ -68,7 +74,4 @@ export class CartComponent implements OnInit {
     });
   }
 
-  getTotal() {
-    
-  }
 }
